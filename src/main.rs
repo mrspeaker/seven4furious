@@ -1,10 +1,12 @@
 mod camera;
 mod scene;
 mod player;
+mod physics;
 
 use camera::CameraPlugin;
 use scene::ScenePlugin;
 use player::PlayerPlugin;
+use physics::PhysicsPlugin;
 
 use bevy::prelude::*;
 
@@ -14,6 +16,7 @@ fn main() {
             DefaultPlugins,
             CameraPlugin,
             ScenePlugin,
-            PlayerPlugin
+            PlayerPlugin,
+            PhysicsPlugin
         )).run();
 }
