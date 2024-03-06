@@ -11,17 +11,10 @@ impl Plugin for ScenePlugin {
 
 fn init_scene(
     mut commands: Commands,
-    assets: Res<AssetServer>,
 ) {
-    commands.spawn(SceneBundle {
-        scene: assets.load("plane.glb#Scene0"),
-        transform: Transform::from_xyz(0.,0.,100.).with_scale(Vec3::ONE * 1.0),
-        ..default()
-    });
-
-     commands.insert_resource(AmbientLight {
+    commands.insert_resource(AmbientLight {
         color: Color::WHITE,
         brightness: 1000.0,
-     });
+    });
 
 }
