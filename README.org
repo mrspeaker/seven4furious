@@ -1,4 +1,3 @@
 * Seven4Furious
 
-#+CAPTION: Seven4Furious, version 0.0.0.1
-[[https://github.com/mrspeaker/seven4furious/assets/129330/32c58154-4513-4468-be26-53f15adb0a9c]]
+![Seven4Furious v0.0.1](https://github.com/mrspeaker/seven4furious/assets/129330/32c58154-4513-4468-be26-53f15adb0a9c)
