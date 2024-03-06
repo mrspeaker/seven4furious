@@ -1,4 +1,4 @@
 * Seven4Furious
 
 #+CAPTION: Seven4Furious, version 0.0.0.1
-[[./assets/129330/32c58154-4513-4468-be26-53f15adb0a9c]]
+[[../../assets/129330/32c58154-4513-4468-be26-53f15adb0a9c]]
