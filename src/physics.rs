@@ -55,8 +55,11 @@ impl Torque {
     }
 }
 
-fn integrate(mut q:Query<(&mut Transform, &mut Impulse, &mut Torque)>) {
+fn integrate(time: Res<Time>, mut q:Query<(&mut Transform, &mut Impulse, &mut Torque)>) {
     for (mut t, mut impulse, mut torque) in q.iter_mut() {
+
+        //gravity
+        impulse.acc.y -= 0.5 * time.delta_seconds();
 
         // Translation
         let acc = impulse.acc;
@@ -65,6 +68,10 @@ fn integrate(mut q:Query<(&mut Transform, &mut Impulse, &mut Torque)>) {
         impulse.acc = Vec3::ZERO;
 
         t.translation += impulse.vel;
+        if t.translation.y < -0.1 {
+            impulse.acc.y = -impulse.vel.y;
+            impulse.vel.y = 0.0;
+        }
 
         // Rotation
         let arot = torque.acc;
@@ -81,5 +88,6 @@ fn integrate(mut q:Query<(&mut Transform, &mut Impulse, &mut Torque)>) {
         //}
 
         t.rotate_local_z(torque.vel.z);
+
     }
 }
